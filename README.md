@@ -7,53 +7,81 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## CRUD con Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# Tarea - Desarrollo en Plataformas
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Estudiante: Paula Coronel
 
-## Learning Laravel
+Fecha:19 de diciembre de 2025
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Paralelo: 3
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Introducción
 
-## Laravel Sponsors
+Este proyecto consiste en el desarrollo de una aplicación web para la gestión de un parqueadero denominada "ParkingExpress". El objetivo principal fue implementar un sistema **CRUD** completo utilizando el framework **Laravel**, permitiendo el registro, visualización, edición y eliminación de vehículos de manera eficiente.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Objetivos
 
-### Premium Partners
+1. Dominar el flujo de trabajo profesional:** Configurar un entorno de desarrollo utilizando **Laravel Herd** y establecer el control de versiones con GitHub.
+2. Implementar la arquitectura MVC: Desarrollar la lógica de negocio mediante la creación de modelos, controladores y migraciones para organizar la estructura del proyecto.
+3. Construir una interfaz funcional: Diseñar vistas responsivas con el motor de plantillas **Blade** y **Bootstrap** para facilitar la interacción del usuario.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
 
-## Contributing
+## Mis Decisiones de Diseño
+### 1. Tabla
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Nombre de la tabla: `vehiculos` 
 
-## Code of Conduct
+| Campo           | Tipo                 | ¿Obligatorio? |
+| ---             | ---                  | ---           |
+|     id          | ID (Auto-increment)  | Sí            |
+|     placa       | String (10)          | Sí            |
+|     tipo        | String (20)          | Sí            |
+|   propietario   | String (100)         | No (Nullable) |
+|   observaciones | Text / String        | No (Nullable) |
+|   created_at    | Timestamp            | Sí            |
+|   updated_at    | Timestamp            | Sí            |
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+### 2. Tipos de vehículo
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Para estandarizar la entrada de datos, se definieron los siguientes tipos en el formulario de registro:
+- Automóvil
+- Motocicleta
+- Camioneta
 
-## License
+### 3. ¿Se puede eliminar registros?
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Si se puede eliminar registros ya que se implementó una acción de eliminación con confirmación para permitir la limpieza de registros obsoletos o erróneos en el sistema.
+
+
+## Comandos Principales Utilizados
+
+- Creación de Modelo y Controlador:** `php artisan make model Vehiculo -mcr` 
+
+- Ejecución de Migraciones:** `php artisan migrate` 
+
+- Limpieza de Caché:** `php artisan view:clear`
+
+## Paso 1: Crear Repositorio en GitHub  
+<img width="1889" height="945" alt="imagen1" src="https://github.com/user-attachments/assets/efdedc88-9e9c-424a-a4b4-92dfbcbaca51" />
+
+## Paso 2: Crear el Proyecto con Laravel Herd
+<img width="1087" height="681" alt="imagen2" src="https://github.com/user-attachments/assets/8d1fda03-f245-4bb1-8f61-bf9fb6992efc" />
+
+## Paso 4: Crear Migración, Modelo y Controlador
+<img width="1013" height="232" alt="imagen3" src="https://github.com/user-attachments/assets/5281a933-5feb-4f5b-bbbc-e640288f4350" />
+
+## Paso 5: Crear vistas
+<img width="887" height="313" alt="imagen4" src="https://github.com/user-attachments/assets/069222c1-2578-47df-ae37-6fe3e6b0ac39" />
+
+## Paso 6: Pantalla
+<img width="835" height="461" alt="5" src="https://github.com/user-attachments/assets/32c9f7c1-f2f1-4c97-8a29-45055eaa7dc8" />
+<img width="1688" height="806" alt="6" src="https://github.com/user-attachments/assets/ee61ac56-c5e6-4d4d-8664-36ddd3c49144" />
+<img width="1682" height="632" alt="7" src="https://github.com/user-attachments/assets/9d345d11-6ed1-4b70-ae35-6bfe4c3cffd6" />
+<img width="629" height="775" alt="8" src="https://github.com/user-attachments/assets/fedd096b-6c01-4052-b1ce-3ad00c415e17" />
+<img width="1694" height="605" alt="9" src="https://github.com/user-attachments/assets/2d5796d4-68d5-4a08-89e8-57b796c097d9" />
+<img width="750" height="553" alt="10" src="https://github.com/user-attachments/assets/021e4a86-30e1-4224-9abb-0ed6896ac7d3" />
+<img width="693" height="783" alt="11" src="https://github.com/user-attachments/assets/839e738c-98c0-4d3e-b97b-519adcab36d5" />
